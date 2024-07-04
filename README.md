@@ -1,7 +1,9 @@
-# PracticeMakesPerfect
+# PracticeMakesPerfect - No CAC
 
-**Versions 1.2.0.0 and higher depend on CustomAmmoCategories!**
+**Custom Fork - No Custom Ammo Categories dependency!**
 **Versions 1.3.0.0 and higher requires modtek v3 or higher**
+
+Forked from [the original by Ajkroeg/T-Bone](https://github.com/ajkroeg/PracticeMakesPerfect).
 
 Mod consists of two modules, XP and Specializations.
 
@@ -31,7 +33,6 @@ Current XP settings in settings.json:
 	"activeProbeXP_PerTarget": true,
 	"activeProbeXP": 25,
 	"sensorLockXP": 25,
-	"AMSKillsXP": 0.5,
 	"missionXPEffects": 0.025,
 	"missionXPeffectBonusDivisor": 35,
 	"reUseRestrictedbonusEffects_XP": {
@@ -71,8 +72,6 @@ NEW STUFF:
 `activeProbeXP` - int, XP awarded to the player for using Active Probe.
 
 `sensorLockXP` - int, XP awarded to player for using Sensor Lock ability.
-
-`AMSKillsXP`- float, XP awarded for missile "kills" for AMS. Added together per-AMS attack sequence and rounded to integer.
 
 `missionXPEffects` - float, multiplier for bonus XP awarded for effects as a function of Mission XP. Functions in tandem with `missionXPeffectBonusDivisor` below to approximate a per-effect bonus.
 

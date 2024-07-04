@@ -48,7 +48,7 @@ namespace PracticeMakesPerfect.Patches
                         {
                             reUseRestricted = effectsList.Any(x => x.EffectData == effectData && x.Target == target);
                             ModInit.modLog.LogMessage(
-                                $"Matching effect found: {effectData?.Description?.Id} from {creator.GetPilot()?.Description?.Callsign} targeting {target?.Description?.UIName}. No double-dipping!");
+                                $"Matching effect found: {effectData?.Description?.Id}/{effectData?.Description?.Name} from {creator.GetPilot()?.Description?.Callsign} targeting {target?.DisplayName}/{target?.Description.Id}. No double-dipping!");
                         }
 
                         else if (ModInit.modSettings.degradingbonusEffects_XP.ContainsKey(effectData?.Description?.Id ?? "UNUSED") ||
@@ -57,7 +57,7 @@ namespace PracticeMakesPerfect.Patches
                         {
                             reUseDegrades = effectsList.Any(x => x?.EffectData == effectData && x?.Target == target);
                             ModInit.modLog.LogMessage(
-                                $"Matching effect found: {effectData?.Description?.Id} from {creator.GetPilot()?.Description?.Callsign} targeting {target?.Description?.UIName}. Applying degraded double-dipping!");
+                                $"Matching effect found: {effectData?.Description?.Id}/{effectData?.Description?.Name} from {creator.GetPilot()?.Description?.Callsign} targeting {target?.DisplayName}/{target?.Description.Id}. Applying degraded double-dipping!");
 
                         }
                     }
@@ -82,7 +82,7 @@ namespace PracticeMakesPerfect.Patches
 
                     var stat = p.StatCollection.GetStatistic("effectXP");
                     p.StatCollection.Int_Add(stat, effectXP);
-                    ModInit.modLog.LogMessage($"No existing effect {effectData?.Description?.Id} from {creator.GetPilot()?.Description?.Callsign} targeting {target?.Description?.UIName}. Adding {effectXP} to {creator.GetPilot()?.Description?.Callsign}'s 'effectXP' pilot stat. No double-dipping until effect expires.");
+                    ModInit.modLog.LogMessage($"No existing effect {effectData?.Description?.Id}/{effectData?.Description?.Name} from {creator.GetPilot()?.Description?.Callsign} targeting {target?.DisplayName}/{target?.Description.Id}. Adding {effectXP} to {creator.GetPilot()?.Description?.Callsign}'s 'effectXP' pilot stat. No double-dipping until effect expires.");
                     return;
                 }
 
@@ -94,7 +94,7 @@ namespace PracticeMakesPerfect.Patches
 
                     var stat = p.StatCollection.GetStatistic("effectXP");
                     p.StatCollection.Int_Add(stat, effectXP);
-                    ModInit.modLog.LogMessage($"No existing effect {effectData.statisticData?.statName} from {creator.GetPilot()?.Description?.Callsign} targeting {target?.Description?.UIName}. Adding {effectXP} to {creator.GetPilot()?.Description?.Callsign}'s 'effectXP' pilot stat. No double-dipping until effect expires.");
+                    ModInit.modLog.LogMessage($"No existing effect {effectData.statisticData?.statName} from {creator.GetPilot()?.Description?.Callsign} targeting {target?.DisplayName}/{target?.Description.Id}. Adding {effectXP} to {creator.GetPilot()?.Description?.Callsign}'s 'effectXP' pilot stat. No double-dipping until effect expires.");
                     return;
                 }
 
@@ -118,7 +118,7 @@ namespace PracticeMakesPerfect.Patches
                         if (degradationFactor <= 0) degradationFactor = 1;
                     }
 
-                    ModInit.modLog.LogMessage($"Matching effect found: {effectData?.Description?.Id} from {creator.GetPilot().Description.Callsign} targeting {target?.Description?.UIName}. Adding {effectXP}/{degradationFactor} = {effectXP / degradationFactor} to {creator.GetPilot().Description.Callsign}'s 'effectXP' pilot stat. Degraded double-dip: more XP closer to effect expiration.");
+                    ModInit.modLog.LogMessage($"Matching effect found: {effectData?.Description?.Id}/{effectData?.Description?.Name} from {creator.GetPilot().Description.Callsign} targeting {target?.DisplayName}/{target?.Description.Id}. Adding {effectXP}/{degradationFactor} = {effectXP / degradationFactor} to {creator.GetPilot().Description.Callsign}'s 'effectXP' pilot stat. Degraded double-dip: more XP closer to effect expiration.");
                         effectXP /= degradationFactor;
 
                         var stat = p.StatCollection.GetStatistic("effectXP");
@@ -146,7 +146,7 @@ namespace PracticeMakesPerfect.Patches
                         if (degradationFactor <= 0) degradationFactor = 1;
                     }
 
-                    ModInit.modLog.LogMessage($"Matching effect found: {effectData.statisticData?.statName} from {creator.GetPilot().Description.Callsign} targeting {target?.Description?.UIName}. Adding {effectXP}/{degradationFactor} = {effectXP / degradationFactor} to {creator.GetPilot().Description.Callsign}'s 'effectXP' pilot stat. Degraded double-dip: more XP closer to effect expiration.");
+                    ModInit.modLog.LogMessage($"Matching effect found: {effectData.statisticData?.statName} from {creator.GetPilot().Description.Callsign} targeting {target?.DisplayName}/{target?.Description.Id}. Adding {effectXP}/{degradationFactor} = {effectXP / degradationFactor} to {creator.GetPilot().Description.Callsign}'s 'effectXP' pilot stat. Degraded double-dip: more XP closer to effect expiration.");
                     effectXP /= degradationFactor;
 
                     var stat = p.StatCollection.GetStatistic("effectXP");
@@ -161,7 +161,7 @@ namespace PracticeMakesPerfect.Patches
                     if (ModInit.modSettings.bonusEffects_XP.ContainsKey(effectData?.Description?.Id ?? "UNUSED"))
                     {
                         var effectXP = ModInit.modSettings.bonusEffects_XP[effectData?.Description?.Id];
-                        ModInit.modLog.LogMessage($"Adding {effectXP} to {creator.GetPilot().Description.Callsign}'s 'effectXP' pilot stat for applying {effectData?.Description?.Id} to {target?.Description?.UIName}. No restrictions on double-dipping.");
+                        ModInit.modLog.LogMessage($"Adding {effectXP} to {creator.GetPilot().Description.Callsign}'s 'effectXP' pilot stat for applying {effectData?.Description?.Id}/{effectData?.Description?.Name} to {target?.DisplayName}/{target?.Description.Id}. No restrictions on double-dipping.");
 
                         var stat = p.StatCollection.GetStatistic("effectXP");
                         p.StatCollection.Int_Add(stat, effectXP);
@@ -172,7 +172,7 @@ namespace PracticeMakesPerfect.Patches
                         !ModInit.modSettings.bonusEffects_XP.ContainsKey(effectData.statisticData?.statName)) return;
                     {
                         var effectXP = ModInit.modSettings.bonusEffects_XP[effectData.statisticData?.statName];
-                        ModInit.modLog.LogMessage($"Adding {effectXP} to {creator.GetPilot().Description.Callsign}'s 'effectXP' pilot stat for applying {effectData.statisticData?.statName} to {target?.Description?.UIName}. No restrictions on double-dipping.");
+                        ModInit.modLog.LogMessage($"Adding {effectXP} to {creator.GetPilot().Description.Callsign}'s 'effectXP' pilot stat for applying {effectData.statisticData?.statName} to {target?.DisplayName}/{target?.Description.Id}. No restrictions on double-dipping.");
                         var stat = p.StatCollection.GetStatistic("effectXP");
                         p.StatCollection.Int_Add(stat, effectXP);
                     }

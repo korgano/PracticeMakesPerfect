@@ -1,0 +1,2972 @@
+{
+	"enableLogging": true,
+	"useMissionXPforBonus": true,
+	"bonusXP_MissionMechKills": 0.05,
+	"bonusXP_MissionOtherKills": 0.025,
+	"bonusXP_MechKills": 50,
+	"bonusXP_OtherKills": 25,
+	"bonusXP_StrDamageMult": 0.0,
+	"bonusXP_ArmDamageMult": 0.0,
+	"bonusXP_CAP": -1,
+	"activeProbeXP_PerTarget": true,
+	"activeProbeXP": 25,
+	"sensorLockXP": 20,
+	"missionXPEffects": 0.025,
+	"missionXPeffectBonusDivisor": 20,
+	"reUseRestrictedbonusEffects_XP": {
+		"C3M-Effect": 25,
+		"TAG-Effect": 20,
+		"PLASMA-Effect": 20,
+		"AbilityDefPPC": 25,
+		"PainterEffect": 50,
+		"HAYWIRE-Effect": 50,
+		"StatusEffect-Attack_DamageMelee-Berserk": 50,
+		"StatusEffect-BlindingShot-EffectiveRange": 20,
+		"StatusEffect-BOXER-IncreasedStabDmg": 25,
+		"StatusEffect-BreakLock": 25,
+		"StatusEffect-BWCL-WidowsKissWalkSpeed": 25,
+		"StatusEffect-Artillery-GimpWalkSpeed": 25,
+		"StatusEffect-OverclockDamage": 25,
+		"StatusEffect-SuppressionSRM": 20,
+		"StatusEffect-SuppressionEnergy": 20,
+		"StatusEffect-SuppressionBallistic": 20,
+		"StatusEffect-LongestRanges": 20,
+		"StatusEffect-NARC-Mult": 20,
+		"StatusEffect-TAG-Mult": 20,
+	},
+	"degradingbonusEffects_XP": {},
+	"bonusEffects_XP": {
+		"C3-TargetInfo": 1,
+		"C3i-TargetInfo": 1,
+		"ERLaser-WalkSlow": 10,
+		"Effect_DebuffLaserSensor": 10,
+		"Effect_AcidDMG": 1,
+		"BEES-Effect": 5,
+		"Tracer-Effect": 5,
+		"Flare-Effect": 2,
+		"Suppressant-Effect": 2,
+		"StatusEffect-HitDefense-Light": 5,
+		"StatusEffect-HitDefense-Medium": 5,
+		"StatusEffect-HitDefense-Heavy": 5,
+		"StatusEffect-HitDefense-Assault": 5,
+		"StatusEffect-EvasionBoostTick": 2,
+		"StatusEffect-Elite-ShootAfterSprint": 5,
+		"StatusEffect-OverheatedDamageMultiplier": 10,
+		"StatusEffect-CQCSuite-Defense_ToHitMelee": 10,
+		"StatusEffect_HunkerDown_DR_Lance": 10,
+		"StatusEffect-JumpMaven-DistanceBoost": 15,
+		"StatusEffect_MissileCounter": 5,
+		"StatusEffect-CalledShot-NetworkedTarget": 10,
+		"AbilityDefP8": 10
+	},
+	"MaxOpForSpecializations": 2,
+	"OpForTiersCountTowardMax": false,
+	"MaxMissionSpecializations": 2,
+	"MissionTiersCountTowardMax": false,
+	"TaggedOpforSpecsCountTowardMax": false,
+	"TaggedMissionSpecsCountTowardMax": false,
+	"WhiteListOpFor": [
+		"Davion",
+		"Liao",
+		"Kurita",
+		"Marik",
+		"Steiner",
+		"TaurianConcordat",
+		"MagistracyOfCanopus",
+		"AuriganDirectorate",
+		"AuriganRestoration",
+		"ComStar",
+		"AuriganPirates",
+		"Locals",
+		"Axumite",
+		"Castile",
+		"Chainelane",
+		"Circinus",
+		"ClansGeneric",
+		"ClanFreeGuilds",
+		"Delphi",
+		"Hanse",
+		"Illyrian",
+		"JarnFolk",
+		"Lothian",
+		"Marian",
+		"Oberon",
+		"Outworld",
+		"Rasalhague",
+		"Tortuga",
+		"Valkyrate",
+		"WordOfBlake",
+		"Rim",
+		"Niops"
+	],
+	"WhiteListMissions": [
+		"SimpleBattle",
+		"DestroyBase",
+		"CaptureBase",
+		"DefendBase",
+		"CaptureEscort",
+		"Rescue",
+		"Assassinate",
+		"AmbushConvoy",
+		"FireMission",
+		"ThreeWayBattle",
+		"SoloDuel",
+		"DuoDuel",
+		"Blackout",
+		"AttackDefend"
+	],
+	"OpForSpecList": [
+		{
+			"OpForSpecID": "FS_Favor",
+			"OpForSpecName": "Federated Suns: Lyran Favor",
+			"killsRequired": 12,
+			"factionID": "Davion",
+			"applyToFaction": [
+				"Davion"
+			],
+			"description": "The Archon has recognized this pilot as a famed killer of FedRats. Gain reputation with the Lyrans from contracts against the Federated Suns, and recieve 10% off in Lyran stores.\r\n10% Called Shot Bonus against Federated Suns targets.",
+			"repMult": {
+				"Steiner": 0.8
+			},
+			"storeDiscount": {
+				"Steiner": -0.1
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Lyran-v-FedSuns-Passive",
+						"Name": "Lyran: Suns Hater",
+						"Details": "This pilot is an expert at fighting the Federated Suns, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Lyran-v-FedSuns-CalledShot",
+						"Name": "Lyran: Suns Hater",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "LA_Favor",
+			"OpForSpecName": "Lyran Commonwealth/Alliance: Suns Favor",
+			"killsRequired": 12,
+			"factionID": "Steiner",
+			"applyToFaction": [
+				"Steiner"
+			],
+			"description": "The First Prince has recognized this pilot as a famed killer of Lyran scum. Gain reputation with the FedSuns from contracts against the Lyran Alliance, and recieve 10% off in Davion stores.\r\n10% Called Shot Bonus against Lyran targets.",
+			"repMult": {
+				"Davion": 0.8
+			},
+			"storeDiscount": {
+				"Davion": -0.1
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "FedSuns-v-Lyrans-Passive",
+						"Name": "FedSuns: Lyrans Hater",
+						"Details": "This pilot is an expert at fighting the Lyrans, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-FedSuns-v-Lyrans-CalledShot",
+						"Name": "FedSuns: Lyrans Hater",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "FWL_Unsafe",
+			"OpForSpecName": "Free Worlds League: SAFEty Isn't Guaranteed",
+			"killsRequired": 12,
+			"factionID": "Marik",
+			"applyToFaction": [
+				"Marik"
+			],
+			"description": "This pilot has made a name for themself against the self-righteous FWL and Knights of the Inner Sphere. Gain reputation with the Marian Hegemony and the Circinus Federation from contracts against the Free Worlds League.\r\n10% Called Shot Bonus against FWL targets.",
+			"repMult": {
+				"Marian": 0.8,
+				"Circinus": 0.8
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Periphery-v-FWL-Passive",
+						"Name": "Hater: FWL",
+						"Details": "This pilot is an expert at fighting the FWL, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Periphery-v-FWL-CalledShot",
+						"Name": "Hater: FWL",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "DC_Bushido",
+			"OpForSpecName": "Draconis Combine: The Way of Bushido",
+			"killsRequired": 12,
+			"factionID": "Kurita",
+			"applyToFaction": [
+				"Kurita"
+			],
+			"description": "The Coordinator himself has begrudgingly recognized this pilot's martial prowess. Lose less reputation when taking contracts against the Draconis Combine and get 10% better selling prices in their stores.\r\n10% Called Shot Bonus against Draconis Combine targets.",
+			"repMult": {
+				"Kurita": 0.25
+			},
+			"storeBonus": {
+				"Kurita": 0.1
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Grudge-v-Kurita-Passive",
+						"Name": "Grudging Respect: Kurita",
+						"Details": "This pilot is an expert at fighting the Draconis Combine, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Grudge-v-Kurita-CalledShot",
+						"Name": "Grudging Respect: Kurita",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "CC_Moustache",
+			"OpForSpecName": "Capellan Confederation: Twirl That Moustache",
+			"killsRequired": 12,
+			"factionID": "Liao",
+			"applyToFaction": [
+				"Liao"
+			],
+			"description": "Nobody likes Capellans. Gain reputation with the other four Great Houses when taking contracts against the Capellan Confederation.\r\n10% Called Shot Bonus against Capellan targets.",
+			"repMult": {
+				"Kurita": 0.5,
+				"Davion": 0.5,
+				"Steiner": 0.5,
+				"Marik": 0.5
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Capellan-Hater-Passive",
+						"Name": "Hater: Capellans",
+						"Details": "This pilot is an expert at fighting the Capellans, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Capellan-Hater-CalledShot",
+						"Name": "Hater: Capellans",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "CS_Bills",
+			"OpForSpecName": "ComStar: Nobody Likes Their ISP",
+			"killsRequired": 12,
+			"factionID": "ComStar",
+			"applyToFaction": [
+				"ComStar"
+			],
+			"description": "Nobody likes paying their HPG bills. Gain reputation with all five Great Houses when taking contracts against ComStar.\r\n10% Called Shot Bonus against ComStar targets.",
+			"repMult": {
+				"Kurita": 0.5,
+				"Davion": 0.5,
+				"Steiner": 0.5,
+				"Marik": 0.5,
+				"Liao": 0.5
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "ComStar-Hater-Passive",
+						"Name": "Hater: ComStar",
+						"Details": "This pilot is an expert at fighting ComStar, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-ComStar-Hater-CalledShot",
+						"Name": "Hater: ComStar",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "MC_Trinity",
+			"OpForSpecName": "Magistracy Of Canopus: Breaking the Trinity",
+			"killsRequired": 12,
+			"factionID": "MagistracyOfCanopus",
+			"applyToFaction": [
+				"MagistracyOfCanopus"
+			],
+			"description": "Some very interesting 'toys' tend to fall off the back of Canopian trucks. Take a 10% discount when buying and get 10% better prices when selling at the black market.\r\n10% Called Shot Bonus against Canopian targets.",
+			"storeDiscount": {
+				"AuriganPirates": -0.1
+			},
+			"storeBonus": {
+				"ComStar": 0.1
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Canopus-Hater-Passive",
+						"Name": "Hater: Canopus",
+						"Details": "This pilot is an expert at fighting the Canopians, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Canopus-Hater-CalledShot",
+						"Name": "Hater: Canopus",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "TC_Oppressor",
+			"OpForSpecName": "Taurian Concordat: Oppressor of Freedom",
+			"killsRequired": 12,
+			"factionID": "TaurianConcordat",
+			"applyToFaction": [
+				"TaurianConcordat"
+			],
+			"description": "This pilot has made some connections with factions that are sick of hearing Taurians harp on about 'freedom'. Get a ¢10000 cash bounty for every Taurian unit the company destroys.\r\n10% Called Shot Bonus against Taurian targets.",
+			"killBounty": {
+				"{EMPLOYER}": 10000
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Taurian-Hater-Passive",
+						"Name": "Hater: Taurian",
+						"Details": "This pilot is an expert at fighting the Taurians, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Taurian-Hater-CalledShot",
+						"Name": "Hater: Taurian",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "MH_Chainbreaker",
+			"OpForSpecName": "Marian Hegemony: Breaker of Chains",
+			"killsRequired": 12,
+			"factionID": "Marian",
+			"applyToFaction": [
+				"Marian"
+			],
+			"description": "The only thing worse than slavers are slavers wearing leather skirts pretending to be the salvation of civilization. Get bonus reputation with ComStar and your employer when taking contracts against the Marian Hegemony.\r\n10% Called Shot Bonus against Marian targets.",
+			"repMult": {
+				"ComStar": 0.5,
+				"{EMPLOYER}": 0.5
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Marian Hegemony-Hater-Passive",
+						"Name": "Hater: Marian Hegemony",
+						"Details": "This pilot is an expert at fighting the Marian Hegemony, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Marian Hegemony-Hater-CalledShot",
+						"Name": "Hater: Marian Hegemony",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "NA_Shadowkiller",
+			"OpForSpecName": "Niops Association: Shadow Killer",
+			"killsRequired": 12,
+			"factionID": "Marian",
+			"applyToFaction": [
+				"Marian"
+			],
+			"description": "Rumors swirl around the Niops Association, a periphery power that lurks in the shadows. Get bonus reputation with ComStar and your employer when taking contracts against the Niops Association.\r\n10% Called Shot Bonus against Niops targets.",
+			"repMult": {
+				"ComStar": 0.5,
+				"{EMPLOYER}": 0.5
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Niops-Hater-Passive",
+						"Name": "Hater: Niops",
+						"Details": "This pilot is an expert at fighting the Niops Association, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Niops-Hater-CalledShot",
+						"Name": "Hater: Niops",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "OA_Chainbringer",
+			"OpForSpecName": "Outworlds Alliance: Bringer of Chains",
+			"killsRequired": 12,
+			"factionID": "Outworld",
+			"applyToFaction": [
+				"Outworld"
+			],
+			"description": "Some folks are just born to be in chains. Get bonus reputation with the Tortuga Dominions when taking contracts against the Outworlds Alliance and get 12% better prices when selling in Tortugan stores.\r\n10% Called Shot Bonus against Outworlds targets.",
+			"repMult": {
+				"Tortuga": 0.5
+			},
+			"storeBonus": {
+				"Tortuga": 0.12
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Outworlds-Hater-Passive",
+						"Name": "Hater: Outworlds",
+						"Details": "This pilot is an expert at fighting the Outworlds, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Outworlds-Hater-CalledShot",
+						"Name": "Hater: Outworlds",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "FRR_Upstarts",
+			"OpForSpecName": "Free Rasalhague Republic: Give Us Back Our Worlds",
+			"killsRequired": 12,
+			"factionID": "Rasalhague",
+			"applyToFaction": [
+				"Rasalhague"
+			],
+			"description": "About the only thing the Lyrans and the Kuritans agree on is that the Free Rasalhague Republic shouldn't exist. Gain reputation with the Combine and the Lyran Alliance when taking contracts against the FRR.\r\n10% Called Shot Bonus against Rasalhague targets.",
+			"repMult": {
+				"Kurita": 0.8,
+				"Steiner": 0.8
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Rasalhague-Hater-Passive",
+						"Name": "Hater: Rasalhague",
+						"Details": "This pilot is an expert at fighting the FWL, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Rasalhague-Hater-CalledShot",
+						"Name": "Hater: Rasalhague",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "AR_FreeReach",
+			"OpForSpecName": "Aurigan Restoration: Free the Reach!",
+			"killsRequired": 12,
+			"factionID": "AuriganRestoration",
+			"applyToFaction": [
+				"AuriganRestoration"
+			],
+			"description": "Kamea is nothing but an entitled brat throwing a temper tantrum because she lost her palace. The local governments of the Reach will pay you a cash bonus for contracts against the Aurigan Restoration.\r\n10% Called Shot Bonus against Aurigan Restoration targets.",
+			"cashMult": {
+				"Locals": 0.25
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Restoration-Hater-Passive",
+						"Name": "Hater: Aurigan Restoration",
+						"Details": "This pilot is an expert at fighting the Aurigan Restoration, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Restoration-Hater-CalledShot",
+						"Name": "Hater: Aurigan Restoration",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "AD_TyrantBreaker",
+			"OpForSpecName": "Aurigan Directorate: Tyrant Breaker",
+			"killsRequired": 12,
+			"factionID": "AuriganDirectorate",
+			"applyToFaction": [
+				"AuriganDirectorate"
+			],
+			"description": "Kamea is a beacon of hope for the oppressed peoples of the Reach. Gain bonus reputation with the Restoration when taking contracts against the Directorate.\r\n10% Called Shot Bonus against Aurigan Directorate targets.",
+			"repMult": {
+				"AuriganRestoration": 1.0
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Directorate-Hater-Passive",
+						"Name": "Hater: Aurigan Directorate",
+						"Details": "This pilot is an expert at fighting the Aurigan Directorate, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Directorate-Hater-CalledShot",
+						"Name": "Hater: Aurigan Directorate",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "RC_AmarisGoHome",
+			"OpForSpecName": "Rim Collection: Amaris or Am I Wrong",
+			"killsRequired": 12,
+			"factionID": "Rim",
+			"applyToFaction": [
+				"Rim"
+			],
+			"description": "The remnants of the Rim Worlds Republic are not to be trusted, even 300 years later. Gain reputation with Comstar when taking contracts against the Rim Collection and a 10% discount from ComStar stores.\r\n10% Called Shot Bonus against Rim Collection targets.",
+			"repMult": {
+				"ComStar": 0.5
+			},
+			"storeDiscount": {
+				"ComStar": -0.1
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Rim-Collection-Hater-Passive",
+						"Name": "Hater: Rim Collection",
+						"Details": "This pilot is an expert at fighting the Rim Collection, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Rim-Collection-Hater-CalledShot",
+						"Name": "Hater: Rim Collection",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "CF_OrderChaos",
+			"OpForSpecName": "Circinus Federation: Order To the Chaos",
+			"killsRequired": 12,
+			"factionID": "Circinus",
+			"applyToFaction": [
+				"Circinus"
+			],
+			"description": "This pilot has taken to bringing some order to the chaos of the anti-spinward Periphery. Gain reputation with the FWL when taking contracts against the Circinus Federation. Also get a 10% discount in stores belonging to the Marian Hegemony.\r\n10% Called Shot Bonus against Circinus Federation targets.",
+			"repMult": {
+				"Marik": 0.5
+			},
+			"storeDiscount": {
+				"Marian": -0.1
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Circinus-Federation-Hater-Passive",
+						"Name": "Hater: Circinus Federation",
+						"Details": "This pilot is an expert at fighting the Circinus Federation, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Circinus-Federation-Hater-CalledShot",
+						"Name": "Hater: Circinus Federation",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "TD_PiracyDontPay",
+			"OpForSpecName": "Tortuga Dominions: Piracy Doesn't Pay",
+			"killsRequired": 12,
+			"factionID": "Tortuga",
+			"applyToFaction": [
+				"Tortuga"
+			],
+			"description": "Someone clever once said piracy doesn't pay. Piracy might not, but bounties sure do. Gain bonus cash when taking contracts against the Tortuga Dominions.\r\n10% Called Shot Bonus against Tortugan targets.",
+			"cashMult": {
+				"{EMPLOYER}": 0.25
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Tortugans-Hater-Passive",
+						"Name": "Hater: Tortugans",
+						"Details": "This pilot is an expert at fighting the Tortugans, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Tortugans-Hater-CalledShot",
+						"Name": "Hater: Tortugans",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "AP_PiracyDontPay",
+			"OpForSpecName": "Aurigan Pirates: Piracy Doesn't Pay",
+			"killsRequired": 12,
+			"factionID": "AuriganPirates",
+			"applyToFaction": [
+				"AuriganPirates"
+			],
+			"description": "Someone clever once said piracy doesn't pay. Piracy might not, but bounties sure do. Gain bonus cash when taking contracts against the Aurigan Pirates and a ¢2500 cash bounty for every pirate killed.\r\n10% Called Shot Bonus against Aurigan Pirate targets.",
+			"cashMult": {
+				"{EMPLOYER}": 0.1
+			},
+			"killBounty": {
+				"{EMPLOYER}": 2500
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Aurigan-Pirates-Hater-Passive",
+						"Name": "Hater: Aurigan Pirates",
+						"Details": "This pilot is an expert at fighting Aurigan Pirates, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Aurigan-Pirates-Hater-CalledShot",
+						"Name": "Hater: Aurigan Pirates",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "JF_KillCompetition",
+			"OpForSpecName": "JarnFolk: Killing the Competition",
+			"killsRequired": 12,
+			"factionID": "JarnFolk",
+			"applyToFaction": [
+				"JarnFolk"
+			],
+			"description": "Rule 125: You can't make a deal if you're dead. Get a 25% discount when buying from the Hanseatic League.\r\n10% Called Shot Bonus against JarnFolk targets.",
+			"storeDiscount": {
+				"Hanse": -0.2
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "JarnFolk-Hater-Passive",
+						"Name": "Hater: JarnFolk",
+						"Details": "This pilot is an expert at fighting the FWL, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-JarnFolk-Hater-CalledShot",
+						"Name": "Hater: JarnFolk",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "HL_KillCompetition",
+			"OpForSpecName": "Hanseatic League: Killing the Competition",
+			"killsRequired": 12,
+			"factionID": "Hanse",
+			"applyToFaction": [
+				"Hanse"
+			],
+			"description": "Rule 125: You can't make a deal if you're dead. Get a 20% discount when buying from the JarnFolk and a 10% discount from the Lyrans.\r\n10% Called Shot Bonus against Hanseatic League targets.",
+			"storeDiscount": {
+				"Steiner": -0.1,
+				"JarnFolk": -0.2
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Hanseatic-League-Hater-Passive",
+						"Name": "Hater: Hanseatic League",
+						"Details": "This pilot is an expert at fighting the Hanseatic League, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Hanseatic-League-Hater-CalledShot",
+						"Name": "Hater: Hanseatic League",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "CI_InternalChaos",
+			"OpForSpecName": "Chainelane Isles: Internal Chaos",
+			"killsRequired": 12,
+			"factionID": "Chainelane",
+			"applyToFaction": [
+				"Chainelane"
+			],
+			"description": "The awful thing about the Chainelane Isles is the constant chaos and infighting. The great thing about the Chainelane Isles is the constant chaos and infighting. Get a 10% better prices when buying and selling in the Chainelane Isles. Also get bonus reputation from the Chainelane Isles when fighting the Chainelane Isles.\r\n10% Called Shot Bonus against Chainelane targets.",
+			"repMult": {
+				"Chainelane": 0.5,
+				"{TARGET}": 0.5
+			},
+			"storeDiscount": {
+				"Chainelane": -0.1
+			},
+			"storeBonus": {
+				"Chainelane": 0.1
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Chainelane-Isles-Hater-Passive",
+						"Name": "Hater: Chainelane Isles",
+						"Details": "This pilot is an expert at fighting the Chainelane Isles, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Chainelane-Isles-Hater-CalledShot",
+						"Name": "Hater: Chainelane Isles",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "LG_Centralized",
+			"OpForSpecName": "Locals: Centralized Government",
+			"killsRequired": 12,
+			"factionID": "Locals",
+			"applyToFaction": [
+				"Locals"
+			],
+			"description": "Local governments are shortsighted, greedy, and frequently need to be reigned in. Gain extra reputation with your employer when taking contracts against the Locals if your employer is also the system owner.\r\n10% Called Shot Bonus against Local targets.",
+			"repMult": {
+				"{OWNER}": 2.0
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "Locals-Hater-Passive",
+						"Name": "Hater: Locals",
+						"Details": "This pilot is an expert at fighting locals, and has a 10% Called Shot Bonus against their forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-Locals-Hater-CalledShot",
+						"Name": "Hater: Locals",
+						"Details": "10% Called Shot bonus"
+					},
+					"statisticData": {
+						"statName": "CalledShotBonusMultiplier",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "ClansGeneric_ClanKiller",
+			"OpForSpecName": "Clans: Down with the Furries",
+			"killsRequired": 12,
+			"factionID": "ClansGeneric",
+			"applyToFaction": [],
+			"description": "This pilot is an expert at fighting Clanners. Repeated succcesses result in gaining bonus reputation and a 10% discount from Inner Sphere factions, as well as a 10% Called Shot Bonus against all Clan forces.",
+			"repMult": {
+				"Davion": 0.5,
+				"Steiner": 0.5,
+				"Marik": 0.5,
+				"Kurita": 0.5,
+				"Liao": 0.5,
+				"MagistracyOfCanopus": 0.5,
+				"TaurianConcordat": 0.5,
+				"Outworlds": 0.5,
+				"ComStar": 0.5,
+				"DuchyOfAndurien": 0.5,
+				"ClanFreeGuilds": 0.5
+			},
+			"storeDiscount": {
+				"Davion": -0.1,
+				"Steiner": -0.1,
+				"Marik": -0.1,
+				"Kurita": -0.1,
+				"Liao": -0.1,
+				"MagistracyOfCanopus": -0.1,
+				"TaurianConcordat": -0.1,
+				"Outworlds": -0.1,
+				"ComStar": -0.1,
+				"DuchyOfAndurien": -0.1,
+				"ClanFreeGuilds": -0.1
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "ClansGeneric_ClanKillerCalledShotPassive",
+						"Name": "Hater: Clans",
+						"Details": "This pilot is an expert at fighting the Clans, and receives a 10% Called Shot Bonus against all Clan forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "ClansGeneric_ClanKiller_CalledShot",
+						"Name": "Hater: Clans Called Shot Bonus",
+						"Details": "This pilot is an expert at fighting the Clans, and receives a 10% Called Shot Bonus against all Clan forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamagePerShot",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single",
+						"additionalRules": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "CFG_DownWithSurats",
+			"OpForSpecName": "Clan Free Guilds: Down With the Surats",
+			"killsRequired": 12,
+			"factionID": "ClanFreeGuilds",
+			"applyToFaction": [],
+			"description": "This pilot is an expert at fighting the Clan Free Guilds. Repeated succcesses result in gaining bonus reputation and a 10% discount from the Clans and House Kurita, as well as a 10% Called Shot Bonus against Clan Free Guild forces.",
+			"repMult": {
+				"Kurita": 0.5,
+				"ClanBloodSpirit": 0.5,
+				"ClanBurrock": 0.5,
+				"ClanCloudCobra": 0.5,
+				"ClanCoyote": 0.5,
+				"ClanDiamondShark": 0.5,
+				"ClanFireMandrill": 0.5,
+				"ClanGhostBear": 0.5,
+				"ClanGoliathScorpion": 0.5,
+				"ClanHellsHorses": 0.5,
+				"ClanIceHellion": 0.5,
+				"ClanJadeFalcon": 0.5,
+				"ClanNovaCat": 0.5,
+				"ClanSmokeJaguar": 0.5,
+				"ClanSnowRaven": 0.5,
+				"ClanStarAdder": 0.5,
+				"ClanSteelViper": 0.5,
+				"ClanWolf": 0.5,
+			},
+			"storeDiscount": {
+				"Kurita": -0.1,
+				"ClanBloodSpirit": -0.1,
+				"ClanBurrock": -0.1,
+				"ClanCloudCobra": -0.1,
+				"ClanCoyote": -0.1,
+				"ClanDiamondShark": -0.1,
+				"ClanFireMandrill": -0.1,
+				"ClanGhostBear": -0.1,
+				"ClanGoliathScorpion": -0.1,
+				"ClanHellsHorses": -0.1,
+				"ClanIceHellion": -0.1,
+				"ClanJadeFalcon": -0.1,
+				"ClanNovaCat": -0.1,
+				"ClanSmokeJaguar": -0.1,
+				"ClanSnowRaven": -0.1,
+				"ClanStarAdder": -0.1,
+				"ClanSteelViper": -0.1,
+				"ClanWolf": -0.1,
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "CFG_DownWithSuratsCalledShotPassive",
+						"Name": "Hater: Clan Free Guilds",
+						"Details": "This pilot is an expert at fighting the Clan Free Guilds, and receives a 10% Called Shot Bonus against all Clan forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "CFG_DownWithSurats_CalledShot",
+						"Name": "Hater: Clan Free Guilds Called Shot Bonus",
+						"Details": "This pilot is an expert at fighting the Clan Free Guilds, and receives a 10% Called Shot Bonus against all Clan forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamagePerShot",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single",
+						"additionalRules": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "WOB_SufferNotBlakists",
+			"OpForSpecName": "Word of Blake: Suffer Not Blakist Fanatics to Live",
+			"killsRequired": 12,
+			"factionID": "WordOfBlake",
+			"applyToFaction": [],
+			"description": "This pilot is an expert at fighting Blakist fanatics. Repeated succcesses result in gaining bonus reputation and a 10% discount from all major factions, as well as a 10% Called Shot Bonus against all Clan forces.",
+			"repMult": {
+				"Davion": 0.5,
+				"Steiner": 0.5,
+				"Marik": 0.5,
+				"Kurita": 0.5,
+				"Liao": 0.5,
+				"MagistracyOfCanopus": 0.5,
+				"TaurianConcordat": 0.5,
+				"Outworlds": 0.5,
+				"ComStar": 0.5,
+				"DuchyOfAndurien": 0.5,
+				"ClanFreeGuilds": 0.5,
+				"ClanBloodSpirit": 0.5,
+				"ClanBurrock": 0.5,
+				"ClanCloudCobra": 0.5,
+				"ClanCoyote": 0.5,
+				"ClanDiamondShark": 0.5,
+				"ClanFireMandrill": 0.5,
+				"ClanGhostBear": 0.5,
+				"ClanGoliathScorpion": 0.5,
+				"ClanHellsHorses": 0.5,
+				"ClanIceHellion": 0.5,
+				"ClanJadeFalcon": 0.5,
+				"ClanNovaCat": 0.5,
+				"ClanSmokeJaguar": 0.5,
+				"ClanSnowRaven": 0.5,
+				"ClanStarAdder": 0.5,
+				"ClanSteelViper": 0.5,
+				"ClanWolf": 0.5,
+			},
+			"storeDiscount": {
+				"Davion": -0.1,
+				"Steiner": -0.1,
+				"Marik": -0.1,
+				"Kurita": -0.1,
+				"Liao": -0.1,
+				"MagistracyOfCanopus": -0.1,
+				"TaurianConcordat": -0.1,
+				"Outworlds": -0.1,
+				"ComStar": -0.1,
+				"DuchyOfAndurien": -0.1,
+				"ClanFreeGuilds": -0.1,
+				"ClanBloodSpirit": -0.1,
+				"ClanBurrock": -0.1,
+				"ClanCloudCobra": -0.1,
+				"ClanCoyote": -0.1,
+				"ClanDiamondShark": -0.1,
+				"ClanFireMandrill": -0.1,
+				"ClanGhostBear": -0.1,
+				"ClanGoliathScorpion": -0.1,
+				"ClanHellsHorses": -0.1,
+				"ClanIceHellion": -0.1,
+				"ClanJadeFalcon": -0.1,
+				"ClanNovaCat": -0.1,
+				"ClanSmokeJaguar": -0.1,
+				"ClanSnowRaven": -0.1,
+				"ClanStarAdder": -0.1,
+				"ClanSteelViper": -0.1,
+				"ClanWolf": -0.1,
+			},
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "WOB_SufferNotBlakists_CalledShotPassive",
+						"Name": "Hater: Blakist Fanatics",
+						"Details": "This pilot is an expert at fighting Blakist fanatics, and receives a 10% Called Shot Bonus against all Clan forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "WOB_SufferNotBlakists_CalledShot",
+						"Name": "Hater: Blakist Fanatics Called Shot Bonus",
+						"Details": "This pilot is an expert at fighting Blakist fanatics, and receives a 10% Called Shot Bonus against all Clan forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamagePerShot",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single",
+						"additionalRules": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "CNC_BadTrip",
+			"OpForSpecName": "Clan Nova Cat: Bad Trip",
+			"killsRequired": 12,
+			"factionID": "ClanNovaCat",
+			"applyToFaction": [
+				"ClanWolf",
+				"ClanJadeFalcon",
+				"ClanGhostBear",
+				"ClanNovaCat"
+			],
+			"description": "This pilot is an expert at fighting Clan Nova Cat, and receives a 10% Called Shot Bonus against all Clan forces.",
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "CNC_BadTripCalledShotPassive",
+						"Name": "Hater: Nova Cat",
+						"Details": "This pilot is an expert at fighting Clan Nova Cat, and receives a 10% Called Shot Bonus against all Clan forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "CNC_BadTrip_CalledShot",
+						"Name": "Hater: Nova Cat Called Shot Bonus",
+						"Details": "This pilot is an expert at fighting Clan Nova Cat, and receives a 10% Called Shot Bonus against all Clan forces.",
+						"Icon": "allied-star"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamagePerShot",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single",
+						"additionalRules": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				}
+			]
+		}
+	],
+	"MissionSpecList": [
+		{
+			"MissionSpecID": "SimpleBattle_RightAtMe",
+			"MissionSpecName": "Simple Battle: They Were Coming Right At Me!",
+			"missionsRequired": 12,
+			"contractTypeID": "SimpleBattle",
+			"description": "This pilot enjoys a straight-up fight and has +3 accuracy during Simple Battle contracts.",
+			"AdvTargetInfoUnits": [],
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "SB_ACC",
+						"Name": "Accuracy Increased",
+						"Details": "This pilot enjoys a straight-up fight and has +3 accuracy during Simple Battle contracts.",
+						"Icon": "lv_eye-target"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"modType": "System.Single",
+						"modValue": "-3.0",
+						"operation": "Float_Add",
+						"statName": "AccuracyModifier",
+						"targetAmmoCategory": "NotSet",
+						"targetCollection": "Weapon",
+						"targetWeaponCategory": "Missile",
+						"targetWeaponSubType": "NotSet",
+						"targetWeaponType": "NotSet"
+					}
+				}
+			]
+		},
+		{
+			"MissionSpecID": "Threeway_OC",
+			"MissionSpecName": "Three-Way Battle: Institutional Chaos",
+			"missionsRequired": 12,
+			"contractTypeID": "ThreeWayBattle",
+			"description": "Other forces in Three-Way Battles deal 10% increased damage to eachother.",
+			"AdvTargetInfoUnits": [
+				"NotPlayer"
+			],
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "3W_DMG_Passive",
+						"Name": "Three-Way Damage",
+						"Details": "Other forces in Three-Way Battles deal 10% increased damage to eachother.",
+						"Icon": "chaos"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "AllEnemies",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "3W_DMG",
+						"Name": "Damage Increased",
+						"Details": "Other forces in Three-Way Battles deal 10% increased damage to eachother.",
+						"Icon": "chaos"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamagePerShot",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single",
+						"additionalRules": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				}
+			]
+		},
+		{
+			"MissionSpecID": "Assassinate_HH",
+			"MissionSpecName": "Assassinate: Headhunter",
+			"missionsRequired": 12,
+			"contractTypeID": "Assassinate",
+			"description": "This pilot deals 20% extra damage to the primary Assassinate target.",
+			"AdvTargetInfoUnits": [
+				"Primary"
+			],
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "AS_DMG_Passive",
+						"Name": "Assassin Damage",
+						"Details": "This pilot deals 20% extra damage to the primary Assassinate target.",
+						"Icon": "hooded-assassin"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "AS_DMG",
+						"Name": "Damage Increased",
+						"Details": "This pilot deals 20% extra damage to the primary Assassinate target.",
+						"Icon": "hooded-assassin"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamagePerShot",
+						"operation": "Float_Multiply",
+						"modValue": "1.2",
+						"modType": "System.Single",
+						"additionalRules": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				}
+			]
+		},
+		{
+			"MissionSpecID": "SD_MasterDuelist",
+			"MissionSpecName": "Solo Duel: Master Duelist",
+			"missionsRequired": 12,
+			"contractTypeID": "SoloDuel",
+			"description": "This pilot is a Master Duelist, and gains +3 accuracy during Solo Duels.",
+			"AdvTargetInfoUnits": [],
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "SD_ACC",
+						"Name": "Accuracy Increased",
+						"Details": "This pilot is a Master Duelist, and gains +3 accuracy during Solo Duels.",
+						"Icon": "lv_eye-target"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"modType": "System.Single",
+						"modValue": "-3.0",
+						"operation": "Float_Add",
+						"statName": "AccuracyModifier",
+						"targetAmmoCategory": "NotSet",
+						"targetCollection": "Weapon",
+						"targetWeaponCategory": "Missile",
+						"targetWeaponSubType": "NotSet",
+						"targetWeaponType": "NotSet"
+					}
+				}
+			]
+		},
+		{
+			"MissionSpecID": "DD_MasterDuelist",
+			"MissionSpecName": "Duo Duel: Master Duelist",
+			"missionsRequired": 12,
+			"contractTypeID": "DuoDuel",
+			"description": "This pilot is a Master Duelist, and gains +3 accuracy during Duo Duels.",
+			"AdvTargetInfoUnits": [],
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "DD_ACC",
+						"Name": "Accuracy Increased",
+						"Details": "This pilot is a Master Duelist, and gains +3 accuracy during Duo Duels.",
+						"Icon": "lv_eye-target"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"modType": "System.Single",
+						"modValue": "-3.0",
+						"operation": "Float_Add",
+						"statName": "AccuracyModifier",
+						"targetAmmoCategory": "NotSet",
+						"targetCollection": "Weapon",
+						"targetWeaponCategory": "Missile",
+						"targetWeaponSubType": "NotSet",
+						"targetWeaponType": "NotSet"
+					}
+				}
+			]
+		},
+		{
+			"MissionSpecID": "CaptureBase_TurretsSyndrome",
+			"MissionSpecName": "Capture Base: Turrets Syndrome",
+			"missionsRequired": 12,
+			"contractTypeID": "CaptureBase",
+			"description": "This pilot deals 10% extra damage to turrets.",
+			"AdvTargetInfoUnits": [
+				"Turret"
+			],
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "CB_TS_DMG_Passive",
+						"Name": "Turret Damage Increased",
+						"Details": "This pilot deals 10% extra damage to turrets.",
+						"Icon": "turret"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "CB_TS_DMG",
+						"Name": "Turret Damage Increased",
+						"Details": "This pilot deals 10% extra damage to turrets.",
+						"Icon": "turret"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamagePerShot",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single",
+						"additionalRules": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				}
+			]
+		},
+		{
+			"MissionSpecID": "DestroyBase_Demo",
+			"MissionSpecName": "Destroy Base: Demolition Expert",
+			"missionsRequired": 12,
+			"contractTypeID": "DestroyBase",
+			"description": "This pilot deals 20% extra damage to buildings.",
+			"AdvTargetInfoUnits": [
+				"Building"
+			],
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "DD_BLD_DMG_Passive",
+						"Name": "Building Damage Increased",
+						"Details": "This pilot deals 20% extra damage to buildings.",
+						"Icon": "tower"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "DD_BLD_DMG",
+						"Name": "Damage Increased",
+						"Details": "This pilot deals 20% extra damage to buildings",
+						"Icon": "tower"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamagePerShot",
+						"operation": "Float_Multiply",
+						"modValue": "1.2",
+						"modType": "System.Single",
+						"additionalRules": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				}
+			]
+		},
+		{
+			"MissionSpecID": "DefendBase_Bulwark",
+			"MissionSpecName": "Defend Base: Bulwark Writ Large",
+			"missionsRequired": 12,
+			"contractTypeID": "DefendBase",
+			"description": "Friendly building damage reduced by 20%.",
+			"AdvTargetInfoUnits": [
+				"Building"
+			],
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "DB_DR_Passive",
+						"Name": "Building Damage Increased",
+						"Details": "Friendly building damage reduced by 20%.",
+						"Icon": "thick-wall"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "AllEnemies",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "DB_DR",
+						"Name": "Damage Decreased",
+						"Details": "Friendly building damage reduced by 20%.",
+						"Icon": "thick-wall"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamagePerShot",
+						"operation": "Float_Multiply",
+						"modValue": "0.8",
+						"modType": "System.Single",
+						"additionalRules": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				}
+			]
+		},
+		{
+			"MissionSpecID": "AD_CombinedTactics",
+			"MissionSpecName": "Attack and Defend: Combined Tactics",
+			"missionsRequired": 12,
+			"contractTypeID": "AttackDefend",
+			"description": "Friendly building damage reduced by 10% and damage dealt to enemy buildings increased by 10%.",
+			"AdvTargetInfoUnits": [
+				"Building"
+			],
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "AD_DR_Passive",
+						"Name": "Building Damage Increased",
+						"Details": "Friendly building damage reduced by 10%.",
+						"Icon": "thick-wall"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "AllEnemies",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "AD_DR",
+						"Name": "Damage Decreased",
+						"Details": "Friendly building damage reduced by 10%.",
+						"Icon": "thick-wall"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamagePerShot",
+						"operation": "Float_Multiply",
+						"modValue": "0.9",
+						"modType": "System.Single",
+						"additionalRules": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				},
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "AD_BLD_DMG_Passive",
+						"Name": "Building Damage Increased",
+						"Details": "This pilot deals 10% extra damage to buildings.",
+						"Icon": "tower"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "AD_BLD_DMG",
+						"Name": "Damage Increased",
+						"Details": "This pilot deals 10% extra damage to buildings",
+						"Icon": "tower"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamagePerShot",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single",
+						"additionalRules": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				}
+			]
+		},
+		{
+			"MissionSpecID": "CaptureEscort_DamageResistance",
+			"MissionSpecName": "Capture-Escort: Shield of Faith",
+			"missionsRequired": 12,
+			"contractTypeID": "CaptureEscort",
+			"description": "This pilot is an expert as escorting other units and keeping them out of harms way. Allies take 15% less damage.",
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "AllAllies",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "CE_Ally_DmgResist",
+						"Name": "Damage Resistance",
+						"Details": "This pilot is an expert as escorting other units and keeping them out of harms way. Allies take 15% less damage.",
+						"Icon": "flag-objective"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamageReductionMultiplierAll",
+						"operation": "Float_Multiply",
+						"modValue": "0.85",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"MissionSpecID": "AC_Tankssassin",
+			"MissionSpecName": "Ambush Convoy: Tankssassin",
+			"missionsRequired": 12,
+			"contractTypeID": "AmbushConvoy",
+			"description": "This pilot deals 25% extra damage to vehicles during Ambush Convoy missions.",
+			"AdvTargetInfoUnits": [
+				"Vehicle"
+			],
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "AC_DMG_Passive",
+						"Name": "Convoy Ambush Damage",
+						"Details": "This pilot deals 25% extra damage to vehicles during Ambush Convoy missions.",
+						"Icon": "land-mine"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "AC_DMG",
+						"Name": "Convoy Ambush Damage",
+						"Details": "This pilot deals 25% extra damage to vehicles during Ambush Convoy missions.",
+						"Icon": "land-mine"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamagePerShot",
+						"operation": "Float_Multiply",
+						"modValue": "1.25",
+						"modType": "System.Single",
+						"additionalRules": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				}
+			]
+		},
+		{
+			"MissionSpecID": "TA_Racetrack",
+			"MissionSpecName": "Target Acquisition: Welcome to the Race Track",
+			"missionsRequired": 12,
+			"contractTypeID": "FireMission",
+			"description": "This pilot is extra speedy when it counts. 60 meters added to walk/run/jump distance during Target Acquisition contracts.",
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true,
+						"forcePathRebuild": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "TA_Racetrack_Speed",
+						"Name": "Boosted Speed",
+						"Details": "This pilot is extra speedy when it counts. 60 meters added to walk/run distance during Target Acquisition contracts.",
+						"Icon": "sprinter"
+					},
+					"statisticData": {
+						"statName": "WalkSpeed",
+						"operation": "Float_Add",
+						"modValue": "60",
+						"modType": "System.Single"
+					},
+					"nature": "Buff"
+				},
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true,
+						"forcePathRebuild": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "TA_Racetrack_Jump",
+						"Name": "Boosted Jump",
+						"Details": "This pilot is extra speedy when it counts. 60 meters added to jump distance during Target Acquisition contracts.",
+						"Icon": "sprinter"
+					},
+					"statisticData": {
+						"statName": "JumpDistance",
+						"operation": "Float_Add",
+						"modValue": "60",
+						"modType": "System.Single"
+					},
+					"nature": "Buff"
+				}
+			]
+		},
+		{
+			"MissionSpecID": "RR_Racetrack",
+			"MissionSpecName": "Rescue/Recovery: Need For Speed",
+			"missionsRequired": 12,
+			"contractTypeID": "Rescue",
+			"description": "This pilot is extra speedy when it counts. 60 meters added to walk/run/jump distance during Rescue/Recovery contracts.",
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true,
+						"forcePathRebuild": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "RR_Racetrack_Speed",
+						"Name": "Boosted Speed",
+						"Details": "This pilot is extra speedy when it counts. 60 meters added to walk/run distance during Rescue/Recovery contracts.",
+						"Icon": "sprinter"
+					},
+					"statisticData": {
+						"statName": "WalkSpeed",
+						"operation": "Float_Add",
+						"modValue": "60",
+						"modType": "System.Single"
+					},
+					"nature": "Buff"
+				},
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true,
+						"forcePathRebuild": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "RR_Racetrack_Jump",
+						"Name": "Boosted Jump",
+						"Details": "This pilot is extra speedy when it counts. 60 meters added to jump distance during Rescue/Recovery contracts.",
+						"Icon": "sprinter"
+					},
+					"statisticData": {
+						"statName": "JumpDistance",
+						"operation": "Float_Add",
+						"modValue": "60",
+						"modType": "System.Single"
+					},
+					"nature": "Buff"
+				}
+			]
+		},
+		{
+			"MissionSpecID": "BO_HazardPay",
+			"MissionSpecName": "Blackout: Hazard Pay",
+			"missionsRequired": 12,
+			"contractTypeID": "Blackout",
+			"description": "They didn't use to pay us enough for this. Well...now they do.",
+			"cashMult": 0.75,
+			"effectDataJO": []
+		}
+	],
+	"OpForDefaultList": [
+		{
+			"OpForSpecID": "IncreasedDamage",
+			"OpForSpecName": "Increased Damage",
+			"killsRequired": 4,
+			"factionID": "UNIVERSAL",
+			"applyToFaction": [
+				"UNIVERSAL"
+			],
+			"description": "This pilot inflicts increased damage against {faction}.",
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "IncreasedDamagePassive",
+						"Name": "Increased Damage",
+						"Details": "This pilot is an expert at killing the target faction, and deals 20% increased damage to them.",
+						"Icon": "cannon-shot"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "IncreasedDamage",
+						"Name": "Increased Damage",
+						"Details": "This pilot inflicts 20% damage against the target faction.",
+						"Icon": "cannon-shot"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamagePerShot",
+						"operation": "Float_Multiply",
+						"modValue": "1.2",
+						"modType": "System.Single",
+						"additionalRules": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				}
+			]
+		},
+		{
+			"OpForSpecID": "DecreasedDamage",
+			"OpForSpecName": "Damage Resistance",
+			"killsRequired": 8,
+			"factionID": "UNIVERSAL",
+			"applyToFaction": [
+				"UNIVERSAL"
+			],
+			"description": "This pilot is an expert at fighting {faction}, and takes decreased damage from them.",
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "IncreasedDamagePassive",
+						"Name": "Increased Damage",
+						"Details": "This pilot is an expert at fighting the target faction, and takes 10% decreased damage from them.",
+						"Icon": "armor-upgrade"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "dummyOpForStat",
+						"operation": "Set",
+						"modValue": "true",
+						"modType": "System.Boolean"
+					}
+				},
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "OnWeaponFire",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "DecreasedDamage",
+						"Name": "Damage Resist",
+						"Details": "This pilot is an expert at fighting the target faction, and takes 10% decreased damage from them.",
+						"Icon": "armor-upgrade"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamageReductionMultiplierAll",
+						"operation": "Float_Multiply",
+						"modValue": "0.8",
+						"modType": "System.Single"
+					}
+				}
+			]
+		}
+	],
+	"MissionDefaultList": [
+		{
+			"MissionSpecID": "DamageResistance",
+			"MissionSpecName": "Damage Resistance",
+			"missionsRequired": 4,
+			"contractTypeID": "UNIVERSAL",
+			"description": "This pilot takes less damage during {contract} contracts.",
+			"effectDataJO": [
+				{
+					"durationData": {},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "SB_DmgResist",
+						"Name": "Damage Resistance",
+						"Details": "This pilot takes 20% less damage during certain contracts.",
+						"Icon": "armor-upgrade"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamageReductionMultiplierAll",
+						"operation": "Float_Multiply",
+						"modValue": "0.8",
+						"modType": "System.Single"
+					}
+				}
+			]
+		},
+		{
+			"MissionSpecID": "DamageBuff",
+			"MissionSpecName": "Increased Damage",
+			"missionsRequired": 8,
+			"contractTypeID": "UNIVERSAL",
+			"description": "This pilot deals 10% increased damage during {contract} contracts.",
+			"effectDataJO": [
+				{
+					"durationData": {
+						"duration": 1,
+						"ticksOnEndOfRound": true,
+						"useActivationsOfTarget": true,
+						"stackLimit": 1
+					},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "IncreasedDamage2",
+						"Name": "Increased Damage",
+						"Details": "This pilot deals increased damage during certain contracts.",
+						"Icon": "cannon-shot"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"statName": "DamagePerShot",
+						"operation": "Float_Multiply",
+						"modValue": "1.1",
+						"modType": "System.Single",
+						"additionalRules": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				}
+			]
+		}
+	],
+	"StratComs": [
+		{
+			"StratComID": "StrategicResolve",
+			"StratComName": "Strategic Resolve",
+			"description": "The commander is sitting this contract out, providing strategic command over the battle. Resolve generation is increased.",
+			"effectDataJO": [
+				{
+					"durationData": {
+						"duration": -1,
+						"stackLimit": -1
+					},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-OfficerTrainee",
+						"Name": "Resolve Generation Increased",
+						"Details": "The commander is sitting this contract out, providing strategic command over the battle. Resolve generation is increased.",
+						"Icon": "officer-trainee"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"appliesEachTick": false,
+						"effectsPersistAfterDestruction": false,
+						"statName": "MoraleBonusGain",
+						"operation": "Int_Add",
+						"modValue": "2",
+						"modType": "System.Int32"
+					},
+					"tagData": null,
+					"floatieData": null,
+					"actorBurningData": null,
+					"vfxData": null,
+					"instantModData": null,
+					"poorlyMaintainedEffectData": null
+				}
+			]
+		},
+		{
+			"StratComID": "StrategicAccuracy",
+			"StratComName": "Strategic Accuracy",
+			"description": "The commander is sitting this contract out, providing strategic command over the battle. Lance accuracy is increased.",
+			"effectDataJO": [
+				{
+					"durationData": {
+						"duration": -1,
+						"stackLimit": -1
+					},
+					"targetingData": {
+						"effectTriggerType": "Passive",
+						"effectTargetType": "Creator",
+						"showInStatusPanel": true
+					},
+					"effectType": "StatisticEffect",
+					"Description": {
+						"Id": "StatusEffect-OfficerTrainee",
+						"Name": "Accuracy Increased",
+						"Details": "The commander is sitting this contract out, providing strategic command over the battle. Lance accuracy is increased.",
+						"Icon": "officer-trainee"
+					},
+					"nature": "Buff",
+					"statisticData": {
+						"modType": "System.Single",
+						"modValue": "-3.0",
+						"operation": "Float_Add",
+						"statName": "AccuracyModifier",
+						"targetAmmoCategory": "NotSet",
+						"targetCollection": "Weapon"
+					}
+				}
+			]
+		}
+	],
+	"taggedOpForSpecs": {
+		"name_t-bone": [
+			"AP_PiracyDontPay",
+			"AR_FreeReach"
+		]
+	},
+	"taggedMissionSpecs": {
+		"name_t-bone": [],
+		"name_Blaze": []
+	},
+	"argoUpgradeToReset": "argo_trainingModule3",
+	"dummyOpForStat": "dummyOpForStat",
+	"removeDeprecated": true,
+	"DebugCleaning": false,
+	"OpforSubfactionsMap": {
+		"WordOfBlake": [
+			"ComStar_WrathOfKarpov"
+		],
+		"ComStar": [
+			"ComStar_HandsOfToyama",
+			"ComStar_VoiceOfBlake"
+		],
+		"ClansGeneric": [
+			"ClanBloodSpirit",
+			"ClanBurrock",
+			"ClanCloudCobra",
+			"ClanCoyote",
+			"ClanDiamondShark",
+			"ClanFireMandrill",
+			"ClanGhostBear",
+			"ClanGoliathScorpion",
+			"ClanHellsHorses",
+			"ClanIceHellion",
+			"ClanJadeFalcon",
+			"ClanNovaCat",
+			"ClanSmokeJaguar",
+			"ClanSnowRaven",
+			"ClanStarAdder",
+			"ClanSteelViper",
+			"ClanWolf"
+		]
+	}
+}

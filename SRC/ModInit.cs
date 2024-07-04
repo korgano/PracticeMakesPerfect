@@ -1,49 +1,68 @@
 ﻿using System;
-using System.Reflection;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using Newtonsoft.Json;
 using PracticeMakesPerfect.Framework;
+using HarmonyLib; // Ensure you have the latest Harmony package referenced
 
 namespace PracticeMakesPerfect
 {
-
     public static class ModInit
     {
         public static Logger modLog;
         public static string modDir;
-
-
         public static Settings modSettings;
         public const string HarmonyPackage = "us.tbone.PracticeMakesPerfect";
+
         public static void Init(string directory, string settingsJSON)
         {
             modDir = directory;
             modLog = new Logger(modDir, "bigPMPin", true);
+
             try
             {
-                using (var reader = new StreamReader($"{modDir}/settings.json"))
+                // Check if MonoMod.Backports assembly is available
+                Assembly.Load("MonoMod.Backports");
+            }
+            catch (FileNotFoundException ex)
+            {
+                Logger.LogError($"Missing assembly: {ex.FileName}");
+                return;
+            }
+
+            try
+            {
+                using (var reader = new StreamReader(Path.Combine(modDir, "settings.json")))
                 {
                     var jsData = reader.ReadToEnd();
-                    ModInit.modSettings = JsonConvert.DeserializeObject<Settings>(jsData);
+                    modSettings = JsonConvert.DeserializeObject<Settings>(jsData);
                 }
-
             }
             catch (Exception ex)
             {
-                Logger.LogException(ex);
-                ModInit.modSettings = new Settings();
+                Logger.LogError($"Error reading settings.json: {ex}");
+                modSettings = new Settings();
             }
-            //HarmonyInstance.DEBUG = true;
-            ModInit.modLog.LogMessage($"Initializing PracticeMakesPerfect - Version {typeof(Settings).Assembly.GetName().Version}");
+
+            modLog.LogMessage($"Initializing PracticeMakesPerfect - Version {typeof(Settings).Assembly.GetName().Version}");
+
             if (modSettings.enableSpecializations)
             {
                 SpecManager.ManagerInstance.Initialize();
                 SpecHolder.HolderInstance.Initialize();
             }
-            //var harmony = HarmonyInstance.Create(HarmonyPackage);
-            //harmony.PatchAll(Assembly.GetExecutingAssembly());
-            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), HarmonyPackage);
+
+            try
+            {
+                //var harmony = HarmonyInstance.Create(HarmonyPackage);
+                //harmony.PatchAll(Assembly.GetExecutingAssembly());
+                Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), HarmonyPackage);
+            }
+            catch (Exception ex)
+            {
+                Logger.LogError($"Error initializing Harmony patches: {ex}");
+            }
         }
     }
 
@@ -69,12 +88,8 @@ namespace PracticeMakesPerfect
         public float missionXPeffectBonusDivisor = 1000000f;
 
         public Dictionary<string, int> reUseRestrictedbonusEffects_XP = new Dictionary<string, int>();
-
         public Dictionary<string, int> degradingbonusEffects_XP = new Dictionary<string, int>();
-
         public Dictionary<string, int> bonusEffects_XP = new Dictionary<string, int>();
-
-        public float AMSKillsXP = 0f;
 
         public int MaxOpForSpecializations = 0;
         public bool OpForTiersCountTowardMax = false;
@@ -87,8 +102,8 @@ namespace PracticeMakesPerfect
 
         public int MissionSpecSuccessRequirement = 0; //0 = no req, 1 = GoodFaith, 2 = SuccessOnly
 
-        public List<string> WhiteListOpFor= new List<string>();
-        public List<string> WhiteListMissions= new List<string>();
+        public List<string> WhiteListOpFor = new List<string>();
+        public List<string> WhiteListMissions = new List<string>();
 
         public List<OpForSpec> OpForSpecList = new List<OpForSpec>();
         public List<OpForSpec> OpForDefaultList = new List<OpForSpec>();
